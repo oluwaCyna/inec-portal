@@ -1,0 +1,44 @@
+<?php
+
+use App\Http\Controllers\VoteController;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+// Route::get('/', function () {
+//     return view('unit-result')->name('');
+// });
+
+// Route::get('/total-result', function () {
+//     return view('total-result')->name('total');
+// });
+
+// Route::get('/add-result', function () {
+//     return view('add-result')->name('add');
+// });
+
+Route::get('/', [VoteController::class, 'unitResult'])->name('unit');
+
+Route::get('/total-result', [VoteController::class, 'totalResult'])->name('total');
+
+Route::get('/add-result', [VoteController::class, 'addResult'])->name('add');
+
+Route::post('/request/lga', [VoteController::class, 'lgaRequest'])->name('lga-request');
+Route::post('/request/ward', [VoteController::class, 'wardRequest'])->name('ward-request');
+Route::post('/request/pu', [VoteController::class, 'pollingUnitRequest'])->name('pu-request');
+
+
+
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
