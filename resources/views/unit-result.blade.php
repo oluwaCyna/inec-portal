@@ -4,7 +4,7 @@
 
 <div class="container-md">
     <div class="card">
-        <div class="card-header d-flex gap-2">
+        <div class="card-header d-flex gap-2 unit-group">
             <select class="form-select unit-input"  onchange="lgaReq(this)" id="state">
                 <option selected>Select State</option>
                 @foreach($state as $state) 
@@ -123,7 +123,7 @@
             resultArray = resp.result;
             let resultCard='';
             for (var i=0; i<resultArray.length; i++) {
-                resultCard += `<div class="p-3 bg-info text-center rounded" style="width:30%;>
+                resultCard += `<div class="p-3 bg-info text-center rounded result-card">
                             <h3 class="">${resultArray[i].party_abbreviation}</h3>
                             <h1 class="">${resultArray[i].party_score} votes</h1>
                             </div>`;
