@@ -13,19 +13,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('unit-result')->name('');
-// });
-
-// Route::get('/total-result', function () {
-//     return view('total-result')->name('total');
-// });
-
-// Route::get('/add-result', function () {
-//     return view('add-result')->name('add');
-// });
-
 Route::get('/', [VoteController::class, 'unitResult'])->name('unit');
 
 Route::get('/total-result', [VoteController::class, 'totalResult'])->name('total');
@@ -40,10 +27,3 @@ Route::post('/request/pu', [VoteController::class, 'pollingUnitRequest'])->name(
 Route::post('/request/result', [VoteController::class, 'resultRequest'])->name('result-request');
 Route::post('/request/total', [VoteController::class, 'totalRequest'])->name('total-result-request');
 
-
-
-
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });

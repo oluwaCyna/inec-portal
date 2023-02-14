@@ -2,10 +2,10 @@
 
 @section('content')
 
-<div class="container">
-    <div class="card mx-5">
-        <div v class="card-header d-flex gap-2">
-            <select class="form-select" style="width:20%" onchange="lgaReq(this)" id="state">
+<div class="container-md">
+    <div class="card">
+        <div class="card-header d-flex gap-2">
+            <select class="form-select unit-input"  onchange="lgaReq(this)" id="state">
                 <option selected>Select State</option>
                 @foreach($state as $state) 
                 <option value="{{$state->state_id}}">{{$state->state_name}}</option>
@@ -48,7 +48,7 @@
         success:function(resp){
             lgaArray = resp.lga;
             let lgaOpt='';
-            let lga = `<select class="form-select" style="width:20%" onchange="wardReq(this)" id="lga">
+            let lga = `<select class="form-select" onchange="wardReq(this)" id="lga">
                 <option selected id="lga-default">Select LGA</option>
             </select>`;
             $("#lga").replaceWith(lga);
@@ -73,7 +73,7 @@
         success:function(resp){
             wardArray = resp.ward;
             let wardOpt='';
-            let ward = `<select class="form-select" style="width:20%" onchange="puReq(this)" id="ward">
+            let ward = `<select class="form-select" onchange="puReq(this)" id="ward">
                 <option selected id="ward-default">Select Ward</option>
             </select>`;
             $("#ward").replaceWith(ward);
@@ -98,7 +98,7 @@
         success:function(resp){
             puArray = resp.pu;
             let puOpt='';
-            let pu = `<select class="form-select" style="width:20%" onchange="resultReq(this)" id="pu">
+            let pu = `<select class="form-select" onchange="resultReq(this)" id="pu">
                 <option selected id="pu-default">Select Polling Unit</option>
             </select>`;
             $("#pu").replaceWith(pu);

@@ -2,10 +2,10 @@
 
 @section('content')
 
-<div class="container">
-    <div class="card mx-5">
+<div class="container-md">
+    <div class="card">
         <div v class="card-header d-flex gap-2">
-            <select class="form-select" style="width:50%" onchange="lgaReq(this)" id="state">
+            <select class="form-select" onchange="lgaReq(this)" id="state">
                 <option selected>Select State</option>
                 @foreach($state as $state) 
                 <option value="{{$state->state_id}}">{{$state->state_name}}</option>
@@ -46,7 +46,7 @@
         success:function(resp){
             lgaArray = resp.lga;
             let lgaOpt='';
-            let lga = `<select class="form-select" style="width:50%" onchange="resultReq(this)" id="lga">
+            let lga = `<select class="form-select" onchange="resultReq(this)" id="lga">
                 <option selected id="lga-default">Select LGA</option>
             </select>`;
             $("#lga").replaceWith(lga);
